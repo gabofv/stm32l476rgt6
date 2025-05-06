@@ -41,7 +41,8 @@ int main(void) {
 	// Set pin 5 to output mode
 	GPIOA_MODE_R |= (1U<<10);		// MODER5 bit 10
 	GPIOA_MODE_R &= ~(1U<<11);		// MODER5 bit 11
-	
+
+	// Set Output Data bit for pin 5 (LED)
 	while (1)
 		GPIOA_OD_R |= LED_PIN5;
 	
