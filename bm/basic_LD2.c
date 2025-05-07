@@ -42,9 +42,12 @@ int main(void) {
 	GPIOA_MODE_R |= (1U<<10);		// MODER5 bit 10
 	GPIOA_MODE_R &= ~(1U<<11);		// MODER5 bit 11
 
-	// Set Output Data bit for pin 5 (LED)
-	while (1)
-		GPIOA_OD_R |= LED_PIN5;
+	// Set Output Data bit for pin 5 (blinking LED)
+	while (1) {
+		// GPIOA_OD_R |= LED_PIN5;
+		GPIOA_OD_R ^= LED_PIN5;
+		for (int i = 0; i < 100000; i++) {}
+	}
 	
 	return 0;
 }
