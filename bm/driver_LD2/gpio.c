@@ -31,11 +31,11 @@ int main(void) {
 
 void ld2_init(void) {
 	/* Enable clock */
-		RCC->AHB2ENR |= GPIOAEN;
+	RCC->AHB2ENR |= GPIOAEN;
 
-		/* Set GPIOA to only output mode */
-		GPIOA->MODER |= (1U<<10);
-		GPIOA->MODER &= ~(1U<<11);
+	/* Set GPIOA to only output mode */
+	GPIOA->MODER |= (1U<<10);
+	GPIOA->MODER &= ~(1U<<11);
 }
 
 void ld2_on(void) {
