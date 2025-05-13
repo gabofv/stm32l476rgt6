@@ -9,7 +9,7 @@
 #include "systick.h"
 
 
-#define CTRL_ENABLE			(1U<<0)
+#define CTRL_ENABLE		(1U<<0)
 #define CTRL_CLKSOURCE		(1U<<2)
 #define CTRL_COUNTFLAG		(1U<<16)
 
