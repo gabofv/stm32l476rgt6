@@ -2,7 +2,7 @@
  *************************************************************************************
  * @file           : systick.c
  * @author         : Gabriel Vasquez
- * @brief          : Src file for SysTick (Timer in Arm Cortex-M processor)
+ * @brief          : Src file for SysTick (timer in Arm Cortex-M processors) driver
  *************************************************************************************
  */
 
