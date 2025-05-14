@@ -1,8 +1,9 @@
 /*
- * adc.h
- *
- *  Created on: May 10, 2025
- *      Author: gabri
+ *************************************************************************************
+ * @file           : adc.h
+ * @author         : Gabriel Vasquez
+ * @brief          : Header file for ADC driver (ADC1, Ch1, continuous) for PC0/A5
+ *************************************************************************************
  */
 
 #ifndef ADC_H_
