@@ -1,8 +1,9 @@
 /*
- * adc.c
- *
- *  Created on: May 10, 2025
- *      Author: gabri
+ *************************************************************************************
+ * @file           : adc.c
+ * @author         : Gabriel Vasquez
+ * @brief          : Src file for ADC driver (ADC1, Ch1, continuous) for PC0/A5
+ *************************************************************************************
  */
 
 #include "adc.h"
@@ -11,24 +12,24 @@
 
 
 /* RCC */
-#define GPIOCEN        (1U<<2)
-#define ADCEN          (1U<<13)
+#define GPIOCEN        		(1U<<2)
+#define ADCEN          		(1U<<13)
 
 /* ADC */
-#define ISR_EOC        (1U<<2)
-#define ISR_ADRDY      (1U<<0)
-#define CR_ADCAL       (1U<<31)
-#define CR_ADCALDIF		 (1U<<30)
-#define CR_DEEPPWD		 (1U<<29)
-#define CR_ADVREGEN		 (1U<<28)
-#define CR_ADSTP		   (1U<<4)
-#define CR_ADSTART		 (1U<<2)
-#define CR_ADEN			   (1U<<0)
-#define CFGR_CONT		   (1U<<13)
-#define SQR1_SQ1_CH1	 (1U<<6)
-#define SQR1_L			   (0x00)
+#define ISR_EOC        		(1U<<2)
+#define ISR_ADRDY      		(1U<<0)
+#define CR_ADCAL       		(1U<<31)
+#define CR_ADCALDIF		(1U<<30)
+#define CR_DEEPPWD		(1U<<29)
+#define CR_ADVREGEN		(1U<<28)
+#define CR_ADSTP		(1U<<4)
+#define CR_ADSTART		(1U<<2)
+#define CR_ADEN			(1U<<0)
+#define CFGR_CONT		(1U<<13)
+#define SQR1_SQ1_CH1	 	(1U<<6)
+#define SQR1_L			(0x00)
 
-#define tADCVREG_STUP	 20
+#define tADCVREG_STUP	 	20
 
 
 void pc0_adc_init(void) {
@@ -83,6 +84,10 @@ void pc0_adc_init(void) {
 
 void pc0_start_conv(void) {
 	ADC1->CFGR |= CFGR_CONT;
+
+	/* Enables overwrite-on-overrun - DMA coming soon */
+	ADC1->CFGR |= CFGR_OVRMOD;
+	
 	ADC1->CR |= CR_ADSTART;
 }
 
