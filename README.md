@@ -1,6 +1,4 @@
 # stm32l476rgt6
-Bare-metal drivers in C for an STM32L476RGT6 MCU (ultra-low-power series).
-
-An attempt to replicate drivers needed for different ultra-low and limited-memory applications.
+Bare-metal drivers in C for an STM32L476RGT6 MCU (ultra-low-power series). They aim to replicate drivers needed for different ultra-low and limited-memory applications.
 
 <img src="https://github.com/user-attachments/assets/cb86b818-838e-4a18-bd8b-7e2797dc7c08" width="250" />
